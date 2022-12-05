@@ -1,0 +1,29 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    @model IEnumerable<Produto>
+}
+@if (ViewBag.Message != null)
+{
+    <script type="text/javascript">
+        window.onload = function () {
+            alert("@ViewBag.Message");
+        };
+    </script>
+}
+<div class="text-center">
+    <form asp-action="Logar" method="post">
+        <div class="jumbotron vertical-center">
+            <div class="container">
+                <label for="Nome">Nome:</label>
+                <input class="form-control" type="text" placeholder="Usuário" name="usuario"><br />
+            </div>
+            <div class="form-group">
+                <label for="Preco">Preço:</label>
+                <input class="form-control" type="password" placeholder="Senha" name="senha"><br /><br />
+            </div>
+            <div class="text-center panel-body">
+                <button type="submit" class="btn btn-sm btn-primary">Logar</button>
+            </div>
+        </div>
+    </form>
+</div>
